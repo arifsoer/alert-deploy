@@ -12,12 +12,12 @@ services:
 
   frontend:
     container_name: alert-fe
-    image: redbios/alert-fe:latest
+    image: alert-fe:latest
     restart: unless-stopped
 
   backend:
-    container_name: alert-fe
-    image: redbios/alert-be:latest
+    container_name: alert-be
+    image: alert-be:latest
     restart: unless-stopped
 
   postgre-chal:
@@ -28,6 +28,8 @@ services:
       - POSTGRES_USER=username
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=dev_database
+    port:
+      - 5555:5432
 
 volumes:
   postgre-chal:
