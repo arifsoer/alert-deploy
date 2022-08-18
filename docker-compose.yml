@@ -17,7 +17,9 @@ services:
 
   backend:
     container_name: alert-be
-    image: redbios/alert-be:latest
+    # image: alert-be:latest
+    build:
+      context: ./alert-dashboard-be
     restart: unless-stopped
 
   postgre-chal:
