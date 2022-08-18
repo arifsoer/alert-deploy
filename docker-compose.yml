@@ -12,12 +12,12 @@ services:
 
   frontend:
     container_name: alert-fe
-    image: alert-fe:latest
+    image: redbios/alert-fe:latest
     restart: unless-stopped
 
   backend:
     container_name: alert-be
-    image: alert-be:latest
+    image: redbios/alert-be:latest
     restart: unless-stopped
 
   postgre-chal:
