@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  main-nginx:
+    image: nginx:1.17-alpine
+    container_name: main-nginx
+    restart: unless-stopped
+    volumes:
+      - ./config/main-nginx:/etc/nginx/conf.d
+    ports:
+      - 80:80
+
+  frontend:
+    container_name: alert-fe
+    image: redbios/alert-fe:latest
+    restart: unless-stopped
+
+  backend:
+    container_name: alert-fe
+    image: redbios/alert-be:latest
+    restart: unless-stopped
+
+  postgre-chal:
+    image: postgres:10.12
+    volumes:
+      - postgre-chal:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=username
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=dev_database
+
+volumes:
+  postgre-chal:
