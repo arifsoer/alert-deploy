@@ -28,7 +28,7 @@ services:
       - POSTGRES_USER=username
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=dev_database
-    port:
+    ports:
       - 5555:5432
 
 volumes:
