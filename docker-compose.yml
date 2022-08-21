@@ -31,5 +31,12 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=dev_database
 
+  adminer:
+    image: adminer
+    environment:
+      - ADMINER_DESIGN=pappu687
+    ports:
+      - 8080:8080
+
 volumes:
   postgre-chal:
